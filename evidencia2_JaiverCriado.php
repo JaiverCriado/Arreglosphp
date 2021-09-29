@@ -6,24 +6,27 @@
         Evidencia_AA2: Taller uso de arreglos
         */
 
-        // En este apartado realizaremos un recorrido por el array de datos
-        $arregloDatos = array(
-            array("Juan Perez","Cra. 45 #45-56","3456789","23/12/1997","Amarillo"),
-            array("Pablo Manrique","Clle. 23 #12 - 19 Sur","3214567","12/10/1980","Verde"),
-            array("Nancy Peña","Av. 34 # 16 - 12","2135423","07/06/2000","Azul")
-        );
+        // En este apartado realizaremos un recorrido por el array de Colores
         
-        // En este apartado realizaremos un recorrido por el array de datos
         $arregloColores = array (
             "Amarillo" => "Riqueza y Alegria",
             "Verde" => "Paz y Esperanza",
             "Azul" => "Pureza y Tranquilidad",
         );
+        
+        // En este apartado realizaremos un recorrido por el array de datos
+        
+        $arregloDatos = array(
+            array("Juan Perez","Cra. 45 #45-56","3456789","23/12/1997","Amarillo"),
+            array("Pablo Manrique","Clle. 23 #12 - 19 Sur","3214567","12/10/1980","Verde"),
+            array("Nancy Peña","Av. 34 # 16 - 12","2135423","07/06/2000","Azul"),
+        );
+        
  
         // En este apartado realizaremos un recorrido por el array
 
-            for($i=1;$i<3;$i++){
-                $color=$arregloDatos[$i][3];
+            for($i=0;$i<3;$i++){
+                $color=$arregloDatos[$i][4];
                   if(empty($arregloColores[$color])){
                       $arregloDatos[$i][5]='No se encuentra el significado';
                 }
@@ -95,8 +98,17 @@
                     <th>Significado</th>
                 </tr>
             </thead>
+        <?php
+    
+        // El foreach recorre el arreglo 
 
-        <tr><td> Juan Perez </td><td> Cra. 45 #45-56 </td><td> 3456789 </td><td> 23/12/1997 </td><td> Amarillo </td></tr><tr><td> Pablo Manrique </td><td> Clle. 23 #12 - 19 Sur </td><td> 3214567 </td><td> 12/10/1980 </td><td> Rojo </td><td> No se encuentra el significado </td></tr><tr><td> Nancy Peña </td><td> Av. 34 # 16 - 12 </td><td> 2135423 </td><td> 07/06/2000 </td><td> Azul </td><td> No se encuentra el significado </td></tr>        </table>
+             foreach ($arregloDatos as $fila){
+                echo "<tr>";
+                   foreach ($fila as $celda){
+                   echo "<td> $celda </td>";
+                }
+                echo "</tr>";
+            }
+      ?>
     </body>
 </html>
-
